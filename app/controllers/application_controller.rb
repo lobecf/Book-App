@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    { message: "Testing!" }.to_json
+    { message: "Testing 12345!" }.to_json
   end
 
 end
