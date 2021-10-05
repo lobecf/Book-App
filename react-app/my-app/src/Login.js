@@ -3,23 +3,28 @@ import React, { useState } from "react";
 function Login () {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
-    const [userName, setUserName] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const handleSubmit = (e) => {
         setName("");
         setEmail("");
-        setUserName("");
+        setUsername("");
         setPassword("");
         setConfirmPassword("");
 
-        const account = { name, email, userName, password, confirmPassword };
-
-        fetch("http://localhost:3000/Account", {
-            method: "POST",
-            headers: { "Content-Type" : "application/json" },
-            body: JSON.stringify(account)
-        })
+        const account = { name, username, email, password };
+        if (password === confirmPassword) {
+            fetch("http://localhost:9292/users", {
+                method: "POST",
+                headers: { "Content-Type" : "application/json" },
+                body: JSON.stringify(account)
+            })
+            .then(resp => resp.json())
+            .then(data => console.log(data))
+        } else {
+            console.log("invalid password")
+        }
 
     }
 
@@ -44,8 +49,8 @@ function Login () {
                     type="text"
                     placeholder="Username"
                     required
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                 />
                 <input
                     type="password"

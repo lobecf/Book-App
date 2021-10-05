@@ -6,4 +6,13 @@ class ApplicationController < Sinatra::Base
     { message: "Testing 12345!" }.to_json
   end
 
+  get "/users" do
+    { message: "Users found!" }.to_json
+  end
+
+  post "/users" do
+    user = User.create(params)
+    user.to_json
+  end
+
 end
