@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp () {
     const [name, setName] = useState("");
@@ -68,7 +69,9 @@ function SignUp () {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
             </form>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
+            <button type="submit" onClick={handleSubmit}>
+                <Link to="/profile"> Submit </Link>
+            </button>
         </div>
     )
 }

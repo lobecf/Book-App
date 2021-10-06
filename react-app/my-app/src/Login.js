@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login () {
 
@@ -38,7 +39,9 @@ function Login () {
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </form>
-            <button type="submit" onClick={handleSubmit}>Submit</button>
+            <button type="submit" onClick={handleSubmit}>
+                <Link to="/profile"> Submit </Link>
+            </button>
         </div>
     )
 }

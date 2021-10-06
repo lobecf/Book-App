@@ -5,6 +5,7 @@ import Welcome from "./Welcome";
 import Login from "./Login";
 import Playlist from "./Playlist";
 import { Switch, Route } from "react-router-dom";
+import Profile from "./Profile";
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login/>
+        </Route>
+        <Route path="/profile">
+          <Profile/>
         </Route>
       </Switch>
     </div>
