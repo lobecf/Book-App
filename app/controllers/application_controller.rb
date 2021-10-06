@@ -7,7 +7,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/users" do
-    { message: "Users found!" }.to_json
+    User.all.to_json
+  end
+
+  get "/users/:id" do
+    user = User.find(params[:id])
+    user.to_json
   end
 
   post "/users" do

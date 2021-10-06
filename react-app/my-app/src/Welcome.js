@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useReducer } from "react";
 
-function Welcome () {
+function Welcome ({ userInfo }) {
 
     return (
         <div>
-            <p> Welcome Username </p>
+            <p> Welcome {userInfo.name} </p>
             <p> View Profile </p>
             <p> View Preloaded Playlist </p>
         </div>

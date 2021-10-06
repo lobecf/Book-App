@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "./Nav";
 import SignUp from "./SignUp";
 import Welcome from "./Welcome";
@@ -12,6 +12,23 @@ import Goal from "./Goal";
 function App() {
 
   const [page, setPage] = useState("/");
+  const [login, setLogin] = useState("");
+  const [userInfo, setUserInfo] = useState({});
+  
+  useEffect(() => {
+  if (login !== "") {
+    fetch(`http://localhost:9292/users/${login}`)
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+      setUserInfo({
+        name: data.name,
+        username: data.username,
+        email: data.email
+      })
+    })
+  }
+  }, [login])
 
   return (
     <div>
@@ -19,10 +36,10 @@ function App() {
       <Nav onChangePage={setPage}/>
       <Switch>
         <Route path="/sign-up">
-          <SignUp/>
+          <SignUp setLogin={setLogin} />
         </Route>
         <Route path="/login">
-          <Login/>
+          <Login setLogin={setLogin} />
         </Route>
         <Route path="/goal">
           <Goal/>

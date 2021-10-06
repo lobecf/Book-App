@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SignUp () {
+function SignUp ({ setLogin }) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -22,7 +22,10 @@ function SignUp () {
                 body: JSON.stringify(account)
             })
             .then(resp => resp.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                setLogin(data.id)
+            })
         } else {
             console.log("invalid password")
         }
