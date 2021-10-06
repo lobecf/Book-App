@@ -42,7 +42,7 @@ function App() {
           <Login setLogin={setLogin} />
         </Route>
         <Route path="/goal">
-          <Goal/>
+          <Goal userInfo={userInfo} />
         </Route>
         <Route path="/customize-playlist">
           <CustomizePlaylist/>

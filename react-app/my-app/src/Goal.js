@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
-function Goal () {
+function Goal ({ userInfo }) {
 
     return (
         <div>
-            <h2>Welcome User</h2>
+            <h2>Welcome {userInfo.name}</h2>
         </div>
     )
 }

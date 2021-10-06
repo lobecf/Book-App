@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-function Login (setLogin) {
+function Login ({ setLogin }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -12,11 +12,17 @@ function Login (setLogin) {
         setPassword("");
 
         const account = { username, password };
-            fetch("http://localhost:9292/users", {
-                method: "POST",
-                headers: { "Content-Type" : "application/json" },
-                body: JSON.stringify(account)
-            });
+            fetch("http://localhost:9292/users")
+            .then(resp => resp.json())
+            .then(data => {
+                const user = data.filter(user => user.username === username)[0];
+                if (user.password === password) {
+                    console.log("logged in!");
+                    setLogin(user.id)
+                } else {
+                    console.log("failed to log in.");
+                }
+            })
 
     };
 
