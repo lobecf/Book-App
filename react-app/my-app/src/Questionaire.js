@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function CustomizePlaylist () {
+function Questionaire ({ userInfo }) {
 
 
     const genres = ["Focus", "Party", "Self Discovery", "Exercise", "Improve Memory", "Reduce Stress", "Ease Pain", "Wellness"]
@@ -53,7 +53,7 @@ function CustomizePlaylist () {
 
     return (
         <div className="customize-playlist-form">
-            <h2>Welcome User</h2>
+            <h2>Welcome {userInfo.name}</h2>
             {createForms("Pop")}
             {createForms("R&B")}
             {createForms("Rap/Hip-Hop")}
@@ -71,4 +71,4 @@ function CustomizePlaylist () {
     )
 }
 
-export default CustomizePlaylist
+export default Questionaire
