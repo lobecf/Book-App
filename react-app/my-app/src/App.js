@@ -3,9 +3,11 @@ import Nav from "./Nav";
 import SignUp from "./SignUp";
 import Welcome from "./Welcome";
 import Login from "./Login";
+import CustomizePlaylist from "./CustomizePlaylist";
 import Playlist from "./Playlist";
 import { Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
+import Goal from "./Goal";
 
 function App() {
 
@@ -14,7 +16,7 @@ function App() {
   return (
     <div>
       <h1>Music App</h1>
-      <Nav className="nav-bar" onChangePage={setPage}/>
+      <Nav onChangePage={setPage}/>
       <Switch>
         <Route path="/sign-up">
           <SignUp/>
@@ -22,8 +24,11 @@ function App() {
         <Route path="/login">
           <Login/>
         </Route>
-        <Route path="/profile">
-          <Profile/>
+        <Route path="/goal">
+          <Goal/>
+        </Route>
+        <Route path="/customize-playlist">
+          <CustomizePlaylist/>
         </Route>
       </Switch>
     </div>

@@ -70,7 +70,7 @@ function SignUp () {
                 />
             </form>
             <button type="submit" onClick={handleSubmit}>
-                <Link to="/profile"> Submit </Link>
+                <Link to="/customize-playlist"> Submit </Link>
             </button>
         </div>
     )

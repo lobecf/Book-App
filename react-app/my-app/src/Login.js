@@ -40,7 +40,7 @@ function Login () {
                 />
             </form>
             <button type="submit" onClick={handleSubmit}>
-                <Link to="/profile"> Submit </Link>
+                <Link to="/goal"> Submit </Link>
             </button>
         </div>
     )
