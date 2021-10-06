@@ -9,13 +9,12 @@ function CustomizePlaylist () {
             <h2>Welcome User</h2>
             <h3>Pop</h3>
             {/* <form> */}
-                {genres.map((genre, index) => {
+                {genres.map((genre, index) => 
                 <form>
-                    <p>Hi</p>
                     <input key={index} type="checkbox" id={genre} name={genre} value={genre} />
                     <label for={genre}>{genre}</label>
                 </form>
-                })}
+                )}
                 {/* <input type="checkbox" id="focus" name="focus" value="focus"/>
                 <label for="focus">Focus</label>
                 <input type="checkbox" id="party" name="party" value="party"/>
