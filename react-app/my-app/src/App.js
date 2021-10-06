@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
-import Login from "./Login";
+import SignUp from "./SignUp";
 import Welcome from "./Welcome";
+import Login from "./Login";
+import Playlist from "./Playlist";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
 
@@ -10,9 +13,15 @@ function App() {
   return (
     <div>
       <h1>Music App</h1>
-      <Nav onChangePage={setPage}/>
-      <Login/>
-      <Welcome/>
+      <Nav className="nav-bar" onChangePage={setPage}/>
+      <Switch>
+        <Route path="/sign-up">
+          <SignUp/>
+        </Route>
+        <Route path="/login">
+          <Login/>
+        </Route>
+      </Switch>
     </div>
   );
 }

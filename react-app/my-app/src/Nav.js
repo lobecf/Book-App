@@ -12,13 +12,9 @@ function Nav(){
                 {" "}
                 LOGIN{" "}
             </Link>
-            <Link to="/playlists">
+            <Link to="/sign-up">
                 {" "}
-                PLAYLISTS{" "}
-            </Link>
-            <Link to="/review">
-                {" "}
-                REVIEW{" "}
+                SIGN UP{" "}
             </Link>
         </nav>
     )

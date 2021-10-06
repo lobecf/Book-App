@@ -7,7 +7,6 @@ function Welcome () {
             <p> Welcome Username </p>
             <p> View Profile </p>
             <p> View Preloaded Playlist </p>
-
         </div>
 
     );
