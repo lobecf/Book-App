@@ -1,6 +1,5 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
-  @@user = "empty"
   
   # Add your routes here
   get "/" do
@@ -13,7 +12,6 @@ class ApplicationController < Sinatra::Base
 
   get "/users/:id" do
     user = User.find(params[:id])
-    @@user = user
     user.to_json
   end
 
@@ -24,6 +22,11 @@ class ApplicationController < Sinatra::Base
 
   get "/user_genres" do
     UserGenre.all.to_json
+  end
+
+  get "/user_genres/:id" do
+    user = User.find(params[:id])
+    user.user_genres.to_json
   end
 
   post "/user_genres" do
