@@ -71,6 +71,9 @@ function App() {
         <Route path="/questionnaire">
           <Questionnaire userInfo={userInfo} />
         </Route>
+        <Route path="/playlist">
+          <Playlist userInfo={userInfo} />
+        </Route>
       </Switch>
     </div>
   );

@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+#ignore secret keys
+/react-app/my-app/.env
+
 # Ignore bundler config.
 /.bundle
 

@@ -26,7 +26,6 @@ function Goal ({ userInfo }) {
         fetch(`http://localhost:9292/user_genres/${userInfo.id}`)
         .then(resp => resp.json())
         .then(data => {
-            debugger;
             console.log("Initial data", data)
             setGoalsList(data)
         })
@@ -50,7 +49,7 @@ function Goal ({ userInfo }) {
     return (
         <div>
             <h2>{userInfo.name}'s Goals</h2>
-            <GoalCard createCharts={createCharts} />
+            <GoalCard />
         </div>
     )
 }
