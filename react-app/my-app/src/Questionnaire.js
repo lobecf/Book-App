@@ -81,7 +81,7 @@ function Questionnaire ({ userInfo }) {
                 })
               }
 
-            history.push("/goals")
+            history.push("/goal")
         }
     }
 
