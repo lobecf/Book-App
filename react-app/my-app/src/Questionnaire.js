@@ -1,34 +1,40 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Questionnaire ({ userInfo }) {
     let history = useHistory();
     const goals = ["Focus", "Party", "Self Discovery", "Exercise", "Improve Memory", "Reduce Stress", "Ease Pain", "Wellness"]
-    const genres = ["Pop", "R&B", "Rap/Hip-Hop", "Country", "Rock", "Gospel", "Mood", "Dance/Electronic", "Latin", "Classical"]
-    const fullResults = {}
+    const genres = ["Pop", "R&B", "Rap/Hip-Hop", "Country", "Rock", "Gospel", "Mood", "Dance/Electronic", "Latin", "Classical", "Done"]
+    const [fullResults, setFullResults] = useState({})
     const [currentGenre, setCurrentGenre] = useState(0)
     const [checkedState, setCheckedState] = useState(
         new Array(goals.length).fill(false)
     )
 
     function createForm (section) {
-        const list = goals.map((genre, index) =>
-        <form className= {`${genre}-form`}>
-            <input
-            key={index} 
-            type="checkbox" 
-            className= "form-button"
-            name={genre} 
-            value={genre}
-            checked = {checkedState[index]}
-            onChange={() => handleOnChange(section, genre, index)}/>
-            <label for={genre}>{genre}</label>
-        </form>
-        )
-        return <div>
-            <h3>{section}</h3>
-            {list}
+        if (section === "Done") {
+            return <div className="big-message">
+                <h2>You've finished the survey!</h2>
+                <h3>Click the button to view your custom playlists!</h3>
             </div>
+        } else {
+            const list = goals.map((genre, index) =>
+            <form key={index} className= {`${genre}-form`}>
+                <input
+                type="checkbox" 
+                className= "form-button"
+                name={genre} 
+                value={genre}
+                checked = {checkedState[index]}
+                onChange={() => handleOnChange(section, genre, index)}/>
+                <label for={genre}>{genre}</label>
+            </form>
+            )
+            return <div className="form-div">
+                        <h3 className="genre-name">{section}</h3>
+                        {list}
+                        </div>
+        }
     }
 
     const handleOnChange = (section, genre, position) => {
@@ -53,21 +59,27 @@ function Questionnaire ({ userInfo }) {
             const result = {[genres[currentGenre]]: fixedChoices}
             console.log("Current Results:", result)
 
-            Object.assign(fullResults, result)
-            // fullResults = {...fullResults, ...result}
-            console.log("Full Results", fullResults)
+            setFullResults({...fullResults, ...result})
 
             setCheckedState(new Array(goals.length).fill(false))
         } else {
-            fetch("http://localhost:9292/user_genres", {
-                method: "POST",
-                headers: {"Content-Type" : "application/json" },
-                body: JSON.stringify(fullResults)
-            })
-            .then(resp => resp.json())
-            .then(data => {
-                console.log(data)
-            })
+
+            for (const [genre, goals] of Object.entries(fullResults)) {
+                console.log(`${genre}: ${goals}`)
+                fetch("http://localhost:9292/user_genres", {
+                    method: "POST",
+                    headers: {"Content-Type" : "application/json" },
+                    body: JSON.stringify({
+                        user_id: userInfo.id,
+                        genres: genre,
+                        goals: goals.join(",")
+                    })
+                    })
+                    .then(resp => resp.json())
+                    .then(data => {
+                        console.log(data)
+                })
+              }
 
             history.push("/goals")
         }

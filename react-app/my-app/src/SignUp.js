@@ -73,7 +73,7 @@ function SignUp ({ setLogin }) {
                 />
             </form>
             <button type="submit" onClick={handleSubmit}>
-                <Link to="/customize-playlist"> Submit </Link>
+                <Link to="/questionnaire"> Submit </Link>
             </button>
         </div>
     )

@@ -9,6 +9,7 @@ import { Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
 import Goal from "./Goal";
 import Questionnaire from "./Questionnaire";
+import axios from "axios";
 
 function App() {
 
@@ -16,6 +17,27 @@ function App() {
   const [login, setLogin] = useState("");
   const [userInfo, setUserInfo] = useState({});
   
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      console.log("user found")
+
+      console.log(loggedInUser)
+
+      fetch(`http://localhost:9292/users/${loggedInUser}`)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+        setUserInfo({
+          name: data.name,
+          username: data.username,
+          email: data.email,
+          id: data.id
+        })
+      })
+    }
+  }, [])
+
   useEffect(() => {
   if (login !== "") {
     fetch(`http://localhost:9292/users/${login}`)
@@ -25,8 +47,10 @@ function App() {
       setUserInfo({
         name: data.name,
         username: data.username,
-        email: data.email
+        email: data.email,
+        id: data.id
       })
+      localStorage.setItem('user', [data.id])
     })
   }
   }, [login])
@@ -48,7 +72,7 @@ function App() {
         <Route path="/customize-playlist">
           <CustomizePlaylist/>
         </Route>
-        <Route path="/questionaire">
+        <Route path="/questionnaire">
           <Questionnaire userInfo={userInfo} />
         </Route>
       </Switch>
