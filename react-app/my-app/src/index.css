@@ -96,3 +96,7 @@ p {
 	display: inline-grid;
 	margin: 1rem 2rem;
 }
+
+.goal-card-container:hover {
+  cursor: pointer;
+}
