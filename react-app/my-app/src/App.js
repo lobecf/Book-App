@@ -8,7 +8,7 @@ import Playlist from "./Playlist";
 import { Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
 import Goal from "./Goal";
-import Questionaire from "./Questionaire";
+import Questionnaire from "./Questionnaire";
 
 function App() {
 
@@ -49,7 +49,7 @@ function App() {
           <CustomizePlaylist/>
         </Route>
         <Route path="/questionaire">
-          <Questionaire userInfo={userInfo} />
+          <Questionnaire userInfo={userInfo} />
         </Route>
       </Switch>
     </div>

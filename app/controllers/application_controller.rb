@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/user_goals" do
-    console.log(params)
+    params.to_json
   end
 
 end
