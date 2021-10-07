@@ -84,3 +84,15 @@ p {
   border-radius: 8px;
   box-sizing: border-box;
 }
+
+.goal-card-container {
+  display: block;
+	justify-content: center;
+	text-align: center;
+	background: grey;
+	border-radius: 20px;
+	width: 15rem;
+	height: auto;
+	display: inline-grid;
+	margin: 1rem 2rem;
+}

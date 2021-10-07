@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import GoalCard from "./GoalCard";
 import { generatePath } from "react-router";
 
 function Goal ({ userInfo }) {
@@ -48,9 +49,8 @@ function Goal ({ userInfo }) {
 
     return (
         <div>
-            <h2>Welcome {userInfo.name}</h2>
-            <h2>Your Goals:</h2>
-            {createCharts()}
+            <h2>{userInfo.name}'s Goals</h2>
+            <GoalCard createCharts={createCharts} />
         </div>
     )
 }
