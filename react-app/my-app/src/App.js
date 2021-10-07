@@ -3,7 +3,6 @@ import Nav from "./Nav";
 import SignUp from "./SignUp";
 import Welcome from "./Welcome";
 import Login from "./Login";
-import CustomizePlaylist from "./CustomizePlaylist";
 import Playlist from "./Playlist";
 import { Switch, Route } from "react-router-dom";
 import Profile from "./Profile";
@@ -68,9 +67,6 @@ function App() {
         </Route>
         <Route path="/goal">
           <Goal userInfo={userInfo} />
-        </Route>
-        <Route path="/customize-playlist">
-          <CustomizePlaylist/>
         </Route>
         <Route path="/questionnaire">
           <Questionnaire userInfo={userInfo} />
