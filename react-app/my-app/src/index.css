@@ -1,6 +1,6 @@
 h1 {
+  font-size: 70px;
   text-align: center;
-  font-size: 40px;
 }
 
 h2 {
@@ -8,10 +8,78 @@ h2 {
   font-size: 20px;
 }
 
-.nav-bar {
+p {
   text-align: center;
 }
 
-.login-SignUp-form {
+.nav-bar {
+  font-size: 10px;
   text-align: center;
+  margin: 20px;
+}
+
+.nav-bar-link {
+  padding: 45px;
+  font-size: 13px;
+
+}
+
+.login-SignUp-form-Div {
+  display: block;
+  justify-content: center;
+}
+
+.login-SignUp-form {
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.login-Signup-btn {
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.genre-name {
+  text-align: center;
+}
+
+.Questionnaire-form-div {
+  justify-content: center;
+  margin: auto;
+  display: block;
+}
+
+.genre-form-container {
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.customize-playlist-form {
+  justify-content: center;
+  margin: auto;
+}
+
+.customize-playlist-button {
+  justify-content: center;
+  width: 320px;
+  height: 30px;
+  margin: auto;
+  display: block;
+  border-radius: 8px;
+  box-sizing: border-box;
 }

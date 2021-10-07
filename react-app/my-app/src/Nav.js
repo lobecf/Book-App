@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 function Nav(){
     return (
         <nav className="nav-bar">
-            <Link to="/">
+            <Link className="nav-bar-link" to="/">
                 {" "}
                 HOME{" "}
             </Link>
-            <Link to="/login">
+            <Link className="nav-bar-link" to="/login">
                 {" "}
                 LOGIN{" "}
             </Link>
-            <Link to="/sign-up">
+            <Link className="nav-bar-link" to="/sign-up">
                 {" "}
                 SIGN UP{" "}
             </Link>

@@ -19,7 +19,7 @@ function Questionnaire ({ userInfo }) {
             </div>
         } else {
             const list = goals.map((genre, index) =>
-            <form key={index} className= {`${genre}-form`}>
+            <form key={index} className="genre-form-container">
                 <input
                 type="checkbox" 
                 className= "form-button"
@@ -30,7 +30,7 @@ function Questionnaire ({ userInfo }) {
                 <label for={genre}>{genre}</label>
             </form>
             )
-            return <div className="form-div">
+            return <div className="Questionnaire-form-div">
                         <h3 className="genre-name">{section}</h3>
                         {list}
                         </div>
@@ -88,8 +88,9 @@ function Questionnaire ({ userInfo }) {
     return (
         <div className="customize-playlist-form">
             <h2>Welcome {userInfo.name}</h2>
+            <p>Customize your playlist by filling out the forms below</p>
             {createForm(genres[currentGenre])}
-            <button type="submit" onClick={handleSubmit}>Next</button>
+            <button type="submit" className="customize-playlist-button" onClick={handleSubmit}>Next</button>
         </div>
     )
 }

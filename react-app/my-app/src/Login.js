@@ -27,17 +27,16 @@ function Login ({ setLogin }) {
     };
 
     return (
-        <div className="login-SignUp-form">
-            <h2>Login</h2>
-            <form>
-                <input
+        <div className="login-SignUp-form-Div">
+            <form className="Login-signup-form-container">
+                <input className="login-SignUp-form"
                     type="text"
                     placeholder="Username"
                     required
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <input
+                <input className="login-SignUp-form"
                     type="password"
                     placeholder="Password"
                     required
@@ -45,8 +44,8 @@ function Login ({ setLogin }) {
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </form>
-            <button type="submit" onClick={handleSubmit}>
-                <Link to="/goal"> Submit </Link>
+            <button type="submit" onClick={handleSubmit} className="login-Signup-btn">
+                <Link to="/goal"> Login </Link>
             </button>
         </div>
     )

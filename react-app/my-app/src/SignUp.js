@@ -33,38 +33,37 @@ function SignUp ({ setLogin }) {
     }
 
     return (
-        <div className="login-SignUp-form">
-            <h2>Sign Up</h2>
-            <form>
-                <input
+        <div className="login-SignUp-form-Div">
+            <form className="Login-signup-form-container">
+                <input className="login-SignUp-form"
                     type="text"
                     placeholder="Full Name"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <input
+                <input className="login-SignUp-form"
                     type="email"
                     placeholder="Email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <input
+                <input className="login-SignUp-form"
                     type="text"
                     placeholder="Username"
                     required
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <input
+                <input className="login-SignUp-form"
                     type="password"
                     placeholder="Password"
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <input
+                <input className="login-SignUp-form"
                     type="password"
                     placeholder="Confirm Password"
                     required
@@ -72,8 +71,8 @@ function SignUp ({ setLogin }) {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
             </form>
-            <button type="submit" onClick={handleSubmit}>
-                <Link to="/questionnaire"> Submit </Link>
+            <button type="submit" onClick={handleSubmit} className="login-Signup-btn">
+                <Link to="/questionnaire"> Sign Up </Link>
             </button>
         </div>
     )
