@@ -5,7 +5,7 @@ function Questionnaire ({ userInfo }) {
     let history = useHistory();
     const goals = ["Focus", "Party", "Self Discovery", "Exercise", "Improve Memory", "Reduce Stress", "Ease Pain", "Wellness"]
     const genres = ["Pop", "R&B", "Rap/Hip-Hop", "Country", "Rock", "Gospel", "Mood", "Dance/Electronic", "Latin", "Classical"]
-    let fullResults = {}
+    const fullResults = {}
     const [currentGenre, setCurrentGenre] = useState(0)
     const [checkedState, setCheckedState] = useState(
         new Array(goals.length).fill(false)
@@ -53,9 +53,10 @@ function Questionnaire ({ userInfo }) {
             const result = {[genres[currentGenre]]: fixedChoices}
             console.log("Current Results:", result)
 
-            // Object.assign(fullResults, {[genres[currentGenre]]: fixedChoices})
-            fullResults = {...fullResults, ...result}
+            Object.assign(fullResults, result)
+            // fullResults = {...fullResults, ...result}
             console.log("Full Results", fullResults)
+
             setCheckedState(new Array(goals.length).fill(false))
         } else {
             fetch("http://localhost:9292/user_genres", {
