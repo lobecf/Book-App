@@ -25,6 +25,7 @@ p {
 }
 
 .login-SignUp-form-Div {
+  padding: 45px;
   display: block;
   justify-content: center;
 }

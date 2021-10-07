@@ -17,26 +17,26 @@ function App() {
   const [login, setLogin] = useState("");
   const [userInfo, setUserInfo] = useState({});
   
-  // useEffect(() => {
-  //   const loggedInUser = localStorage.getItem("user");
-  //   if (loggedInUser) {
-  //     console.log("user found")
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user");
+    if (loggedInUser) {
+      console.log("user found")
 
-  //     console.log(loggedInUser)
+      console.log(loggedInUser)
 
-  //     fetch(`http://localhost:9292/users/${loggedInUser}`)
-  //     .then(resp => resp.json())
-  //     .then(data => {
-  //       console.log(data)
-  //       setUserInfo({
-  //         name: data.name,
-  //         username: data.username,
-  //         email: data.email,
-  //         id: data.id
-  //       })
-  //     })
-  //   }
-  // }, [])
+      fetch(`http://localhost:9292/users/${loggedInUser}`)
+      .then(resp => resp.json())
+      .then(data => {
+        console.log(data)
+        setUserInfo({
+          name: data.name,
+          username: data.username,
+          email: data.email,
+          id: data.id
+        })
+      })
+    }
+  }, [])
 
   useEffect(() => {
   if (login !== "") {
