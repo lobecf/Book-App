@@ -20,11 +20,11 @@ class ApplicationController < Sinatra::Base
     user.to_json
   end
 
-  get "/user_goals" do
+  get "/user_genres" do
     UserGenres.all.to_json
   end
 
-  post "/user_goals" do
+  post "/user_genres" do
     params.to_json
   end
 
