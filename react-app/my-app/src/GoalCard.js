@@ -5,14 +5,19 @@ function GoalCard() {
     
     function createGoalCard () {
         const list = goals.map((genre, index) =>
-        <div key={index} className="goal-card-container">
-            <h3 name={genre}></h3>
+        <div key={index}>
+            <h3>{genre}</h3>
+        </div>
+        )
+        return (
+        <div className="goal-card-container">
+            {list}
         </div>
         )
     }
 
     return (
-        <div className="goal-card-container">
+        <div className="goal-card">
             {createGoalCard()}
         </div>
     )
