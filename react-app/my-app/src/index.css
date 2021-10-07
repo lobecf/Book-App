@@ -1,25 +1,58 @@
 h1 {
-  font-size: 70px;
+  font-size: 90px;
+  color: white;
   text-align: center;
+  font-family: "Permanent Marker";
+  margin-bottom: 4px;
+}
+
+body {
+  background-color: black;
 }
 
 h2 {
   text-align: center;
+  font-family: "Raleway";
   font-size: 20px;
+  color: white;
+}
+
+h3 {
+  font-family: "Permanent Marker";
+  color: white;
+  font-size: 40px;
+  margin-top: 1px;
+  margin-bottom: 5px;
+}
+
+h4 {
+  margin-top: 0px;
+  font-family: "Raleway";
+  font-style: italic;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 p {
   text-align: center;
+  font-family: "Raleway";
+  color: white;
 }
 
 .nav-bar {
   font-size: 10px;
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .nav-bar-link {
+  text-decoration: none;
+  font-family: "Raleway";
   padding: 45px;
+  padding-top: 5px;
+  color: white;
   font-size: 13px;
 
 }
@@ -27,27 +60,45 @@ p {
 .login-SignUp-form-Div {
   padding: 45px;
   display: block;
-  justify-content: center;
+  align-items: center;
 }
 
 .login-SignUp-form {
+  color: white;
+  padding-left: 15px;
+  align-items: center;
+  background: black;
   justify-content: center;
   width: 320px;
   height: 30px;
   margin: auto;
+  margin-bottom: 1%;
   display: block;
-  border-radius: 8px;
+  border: white solid 3px;
+  border-radius: 15px;
   box-sizing: border-box;
 }
 
 .login-Signup-btn {
+  text-decoration: none;
+  font-family: "Raleway";
+  color: white;
+  background: black;
   justify-content: center;
   width: 320px;
   height: 30px;
   margin: auto;
   display: block;
-  border-radius: 8px;
+  border: white solid 3px;
+  border-radius: 15px;
   box-sizing: border-box;
+}
+
+.login-Signup-btn:hover {
+  background: #82d973;
+  text-decoration: none;
+  border: #82d973 solid 3px;
+  color: black;
 }
 
 .genre-name {
@@ -55,18 +106,25 @@ p {
 }
 
 .Questionnaire-form-div {
-  justify-content: center;
-  margin: auto;
+  padding: 10px;
   display: block;
+  align-items: center;
 }
 
 .genre-form-container {
+  font-family: "Raleway";
+  color: white;
+  padding-left: 2px;
+  align-items: center;
+  background: black;
   justify-content: center;
   width: 320px;
   height: 30px;
   margin: auto;
+  margin-bottom: 1%;
   display: block;
-  border-radius: 8px;
+  border: white solid 3px;
+  border-radius: 15px;
   box-sizing: border-box;
 }
 
@@ -76,13 +134,22 @@ p {
 }
 
 .customize-playlist-button {
+  background: black;
+  font-family: "Raleway";
+  color: white;
   justify-content: center;
   width: 320px;
   height: 30px;
   margin: auto;
   display: block;
-  border-radius: 8px;
+  border: white solid 3px;
+  border-radius: 15px;
   box-sizing: border-box;
+}
+
+.customize-playlist-button:hover {
+  color: black;
+  background: white;
 }
 
 .goal-card-container {
@@ -99,4 +166,12 @@ p {
 
 .goal-card-container:hover {
   cursor: pointer;
+}
+
+.intro-new-user {
+  margin: 50px;
+}
+
+.all-cards {
+  margin: auto;
 }

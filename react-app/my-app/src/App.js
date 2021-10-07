@@ -56,7 +56,8 @@ function App() {
 
   return (
     <div>
-      <h1>Music App</h1>
+      <h1>Goals</h1>
+      <h4>Through music</h4>
       <Nav onChangePage={setPage}/>
       <Switch>
         <Route path="/sign-up">

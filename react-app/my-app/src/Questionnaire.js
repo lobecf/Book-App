@@ -86,11 +86,16 @@ function Questionnaire ({ userInfo }) {
     }
 
     return (
-        <div className="customize-playlist-form">
-            <h2>Welcome {userInfo.name}</h2>
-            <p>Customize your playlist by filling out the forms below</p>
-            {createForm(genres[currentGenre])}
-            <button type="submit" className="customize-playlist-button" onClick={handleSubmit}>Next</button>
+        <div>
+            <div className="intro-new-user">
+                <h2>Hello {userInfo.name}</h2>
+                <p>Before we get to the good stuff, we need some information from you</p>
+                <p>Select each checkbox that you associate with each genre below</p>
+            </div>
+            <div className="customize-playlist-form">
+                {createForm(genres[currentGenre])}
+                <button type="submit" className="customize-playlist-button" onClick={handleSubmit}>Next</button>
+            </div>
         </div>
     )
 }
