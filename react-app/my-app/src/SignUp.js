@@ -33,6 +33,8 @@ function SignUp ({ setLogin }) {
     }
 
     return (
+        <div>
+        <h5>SIGN UP</h5>
         <div className="login-SignUp-form-Div">
             <form className="Login-signup-form-container">
                 <input className="login-SignUp-form"
@@ -74,6 +76,7 @@ function SignUp ({ setLogin }) {
             <button type="submit" onClick={handleSubmit} className="login-Signup-btn">
                 <Link to="/questionnaire"> Sign Up </Link>
             </button>
+        </div>
         </div>
     )
 }

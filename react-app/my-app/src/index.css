@@ -24,6 +24,16 @@ h3 {
   font-size: 40px;
   margin-top: 1px;
   margin-bottom: 5px;
+  text-align: center;
+}
+
+h6 {
+  font-family: "Permanent Marker";
+  color: white;
+  font-size: 25px;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  text-align: center;
 }
 
 h4 {
@@ -38,7 +48,12 @@ h4 {
 }
 
 h5 {
-  
+  margin-top: 45px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-family: "Raleway";
+  color: white;
+  font-size: 20px;
 }
 
 p {
@@ -71,7 +86,7 @@ p {
 }
 
 .login-SignUp-form-Div {
-  padding: 45px;
+  padding: 10px;
   display: block;
   font-family: "Raleway";
   align-items: center;
@@ -185,8 +200,6 @@ p {
 }
 
 .goal-card-container {
-	justify-content: center;
-	text-align: center;
 	background: none;
   border: solid 10px;
   border-color: #383838;
@@ -209,7 +222,8 @@ p {
 }
 
 .intro-new-user {
-  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 10px;
 }
 
 .all-cards {
