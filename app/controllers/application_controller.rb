@@ -44,4 +44,27 @@ class ApplicationController < Sinatra::Base
       songs.sample(5).to_json
   end
 
+  get "/playlists/:id" do
+    list = User.find(params[:id])
+    list.playlists.to_json
+  end
+
+  # post "/playlists/:id" do
+  #   user = User.find(params[:id])
+  #   list = Playlist.create(user: user, goal: params[goal], songs: params[songs])
+  #   list.playlists.to_json
+  # end
+
+  post "/playlists" do
+    user = User.find(params[:id])
+    playlist = user.playlists.filter {|list| list.goal === params[:goal]}
+    if playlist then
+      list = playlist.update(user: user, goal: params[:goal], songs: params[:songs])
+      list.playlists.to_json
+    else
+      list = Playlist.create(user: user, goal: params[:goal], songs: params[:songs])
+      list.playlists.to_json
+    end
+  end
+
 end
