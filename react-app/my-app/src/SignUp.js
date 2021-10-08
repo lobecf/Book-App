@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function SignUp ({ setLogin }) {
+    const history = useHistory();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -26,6 +27,7 @@ function SignUp ({ setLogin }) {
                 console.log(data)
                 setLogin(data.id)
             })
+            history.push("/questionnaire")
         } else {
             console.log("invalid password")
         }
@@ -74,7 +76,7 @@ function SignUp ({ setLogin }) {
                 />
             </form>
             <button type="submit" onClick={handleSubmit} className="login-Signup-btn">
-                <Link to="/questionnaire"> Sign Up </Link>
+                Sign Up
             </button>
         </div>
         </div>

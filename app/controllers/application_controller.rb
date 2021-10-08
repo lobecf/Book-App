@@ -40,8 +40,11 @@ class ApplicationController < Sinatra::Base
 
   get "/songs/:genre" do
     genre = params[:genre]
-      songs = Song.all.filter {|song| song.genre === genre}
-      songs.sample(5).to_json
+    if genre == "Pop" then
+      genre = "Pop/Rock"
+    end
+    songs = Song.all.filter {|song| song.genre === genre}
+    songs.sample(5).to_json
   end
 
   get "/playlists/:id" do

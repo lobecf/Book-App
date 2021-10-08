@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 function Questionnaire ({ userInfo }) {
     let history = useHistory();
     const goals = ["Focus", "Party", "Self Discovery", "Exercise", "Improve Memory", "Reduce Stress", "Ease Pain", "Wellness"]
-    const genres = ["Pop", "R&B", "Rap", "Country", "Rock", "Gospel", "Mood", "Electronic", "Latin", "Classical", "Done"]
+    const genres = ["Pop", "R&B", "Rap", "Country", "Reggae", "Religious", "Blues", "Electronic", "Folk", "Classical", "Done"]
     const [fullResults, setFullResults] = useState({})
     const [currentGenre, setCurrentGenre] = useState(0)
     const [checkedState, setCheckedState] = useState(
