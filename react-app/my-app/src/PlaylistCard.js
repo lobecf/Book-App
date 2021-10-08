@@ -35,7 +35,7 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
                     <p className="info-p">{song.name}</p>
                     <p className="info-p">{song.band}</p>
                     <p className="info-p">{song.genre}</p>
-                    <button onClick={() => handleOnChange(song)}>X</button>
+                    <button className="song-btn" onClick={() => handleOnChange(song)}>X</button>
                 </div>
             })
         })

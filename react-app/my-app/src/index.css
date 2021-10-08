@@ -227,8 +227,34 @@ p {
 }
 
 .all-cards {
+  align-content: center;
   justify-content: center;
   display: inline-grid;
   display: block;
+  margin-left: 50px;
+  margin-right: 50px
+}
+
+.info-p {
+  display:inline;
+  word-wrap: break-word;
+  width: 250px;
+  float: left;
+  align-content: center;
+  margin-left: 70px;
+  margin-top: 10px;
+  text-align: start;
+}
+
+.song-info {
   margin: auto;
+}
+
+.song-btn {
+  align-content: center;
+  margin-top: 20px;
+}
+
+.songs-div {
+  align-content: center;
 }
