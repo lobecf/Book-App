@@ -14,8 +14,8 @@ function Questionnaire ({ userInfo }) {
     function createForm (section) {
         if (section === "Done") {
             return <div className="big-message">
-                <h2>You've finished the survey!</h2>
-                <h3>Click the button to view your custom playlists!</h3>
+                <h6>Click the button to view</h6>
+                <h6>your custom playlists!</h6>
             </div>
         } else {
             const list = goals.map((genre, index) =>
@@ -89,8 +89,8 @@ function Questionnaire ({ userInfo }) {
         <div>
             <div className="intro-new-user">
                 <h2>Hello {userInfo.name}</h2>
-                <p>Before we get to the good stuff, we need some information from you</p>
-                <p>Select each checkbox that you associate with each genre below</p>
+                <p>Check each goal that you associate the genre</p>
+                <p>with to retrieve you own customized playlist</p>
             </div>
             <div className="customize-playlist-form">
             <i class="fas fa-book"></i>
