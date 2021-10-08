@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 function Playlist({ userInfo }) {
     const location = useLocation()
     const [goalsList, setGoalsList] = useState()
-    const [list, setList] = useState()
+    const [list, setList] = useState([])
 
     const goal = location.state.genre
     console.log(goal)
@@ -26,38 +26,44 @@ function Playlist({ userInfo }) {
             // const allGenres = data.map(element => element.goals)
             const findGenres = data.filter(element => element.goals.includes(goal))
             const setGenres = findGenres.map(element => element.genres)
-            setList(setGenres)
             // console.log("Genres:", allGenres)
             console.log("Includes Find:", setGenres)
 
-            const newGenres = setGenres.map(genre => {
+            for (const genre of setGenres) {
                 fetch(`http://localhost:9292/songs/${genre}`)
                 .then(resp => resp.json())
                 .then(data => {
-                    data.map(element => {
-                        console.log(element)
-                        setList(list => "aaaaa")
-                        console.log("each list:", list)
-                    })
-                    console.log("final list:", list)
+                    setList(list => [...list, data])
                 })
-            })
+            }
 
             console.log("newGenres:", list)
-            // console.log("Includes Filter:", filteredGenres)
-            // console.log(filteredGenres)
-            // const findGenres = data.filter(element => element.goals.includes(genre))
-            // genres.forEach(fetch using element .genre as interpolated piece)
         })
-
-        // fetch(`http://localhost:9292/songs/${list[0]}`)
-        // .then(resp => resp.json())
-        // .then(data => console.log("data:", data))
     }, [])
 
+    useEffect(() => {
+        console.log("effect:", list)
+    }, [list])
+
+    function setSongs() {
+        const map = list.map(arr => {
+            return arr.map(song => {
+                return <div className="song-info">
+                    <p className="info-p">{song.name}</p>
+                    <p className="info-p">{song.band}</p>
+                    <p className="info-p">{song.genre}</p>
+                </div>
+            })
+        })
+        return <div className="songs-div">
+            <h3>Songs for {goal}</h3>
+            {map}
+        </div>
+    }
+
     return (
-        <div>
-            <p></p>
+        <div className="playlist-div">
+            {setSongs()}
         </div>
     )
 }
