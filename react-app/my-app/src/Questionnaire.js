@@ -19,14 +19,15 @@ function Questionnaire ({ userInfo }) {
             </div>
         } else {
             const list = goals.map((genre, index) =>
-            <form key={index} className="genre-form-container">
+            <form key={index} className="genre-form-container" onClick={() => handleOnChange(section, genre, index)}>
                 <input
                 type="checkbox" 
                 className= "form-button"
                 name={genre} 
                 value={genre}
                 checked = {checkedState[index]}
-                onChange={() => handleOnChange(section, genre, index)}/>
+                // onChange={() => handleOnChange(section, genre, index)}
+                />
                 <label for={genre}>{genre}</label>
             </form>
             )
