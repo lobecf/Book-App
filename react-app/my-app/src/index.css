@@ -3,11 +3,12 @@ h1 {
   color: white;
   text-align: center;
   font-family: "Permanent Marker";
+  margin-top: 2px;
   margin-bottom: 4px;
 }
 
 body {
-  background-color: black;
+  background-color:  #262626 ;
 }
 
 h2 {
@@ -31,8 +32,13 @@ h4 {
   font-style: italic;
   color: white;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
+  letter-spacing: 4px;
   margin-bottom: 30px;
+}
+
+h5 {
+  
 }
 
 p {
@@ -45,21 +51,29 @@ p {
   font-size: 10px;
   text-align: center;
   margin: 10px;
+  margin-top: 40px;
 }
 
 .nav-bar-link {
   text-decoration: none;
   font-family: "Raleway";
-  padding: 45px;
-  padding-top: 5px;
+  padding: 33px;
+  padding-bottom: 5px;
   color: white;
   font-size: 13px;
+  transition: all 0.5s ease;
+}
 
+.nav-bar-link:hover {
+  text-decoration: none;
+  color: #82d973;
+  font-weight: bold;
 }
 
 .login-SignUp-form-Div {
   padding: 45px;
   display: block;
+  font-family: "Raleway";
   align-items: center;
 }
 
@@ -67,9 +81,9 @@ p {
   color: white;
   padding-left: 15px;
   align-items: center;
-  background: black;
+  background: none;
   justify-content: center;
-  width: 320px;
+  width: 270px;
   height: 30px;
   margin: auto;
   margin-bottom: 1%;
@@ -77,21 +91,28 @@ p {
   border: white solid 3px;
   border-radius: 15px;
   box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+.login-SignUp-form:hover {
+  border: #82d973 3px;
+  background: black;
 }
 
 .login-Signup-btn {
   text-decoration: none;
   font-family: "Raleway";
   color: white;
-  background: black;
+  background: none;
   justify-content: center;
-  width: 320px;
+  width: 270px;
   height: 30px;
   margin: auto;
   display: block;
   border: white solid 3px;
   border-radius: 15px;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 .login-Signup-btn:hover {
@@ -114,11 +135,11 @@ p {
 .genre-form-container {
   font-family: "Raleway";
   color: white;
-  padding-left: 2px;
+  padding: 2px 2px 2px;
   align-items: center;
-  background: black;
+  background: none;
   justify-content: center;
-  width: 320px;
+  width: 270px;
   height: 30px;
   margin: auto;
   margin-bottom: 1%;
@@ -126,7 +147,15 @@ p {
   border: white solid 3px;
   border-radius: 15px;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
+
+.genre-form-container:hover {
+  border: #82d973 3px;
+  background: black;
+  padding: 2px 2px 2px;
+}
+
 
 .customize-playlist-form {
   justify-content: center;
@@ -134,38 +163,49 @@ p {
 }
 
 .customize-playlist-button {
-  background: black;
+  background: none;
   font-family: "Raleway";
   color: white;
   justify-content: center;
-  width: 320px;
+  width: 270px;
   height: 30px;
   margin: auto;
   display: block;
   border: white solid 3px;
   border-radius: 15px;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 .customize-playlist-button:hover {
+  background: #82d973;
+  text-decoration: none;
+  border: #82d973 solid 3px;
   color: black;
-  background: white;
 }
 
 .goal-card-container {
-  display: block;
 	justify-content: center;
 	text-align: center;
-	background: grey;
+	background: none;
+  border: solid 10px;
+  border-color: #383838;
 	border-radius: 20px;
-	width: 15rem;
-	height: auto;
+	width: 230px;
+	height: 200px;
 	display: inline-grid;
-	margin: 1rem 2rem;
+	margin: 1rem 1rem;
+  transition: transform .6s;
+  transition: all 0.10s ease;
 }
 
 .goal-card-container:hover {
+  color: black;
+  border: solid 10px;
+  border-color: #82d973 ;
   cursor: pointer;
+  background: none;
+  transform: scale(1.1);
 }
 
 .intro-new-user {
@@ -173,5 +213,8 @@ p {
 }
 
 .all-cards {
+  justify-content: center;
+  display: inline-grid;
+  display: block;
   margin: auto;
 }

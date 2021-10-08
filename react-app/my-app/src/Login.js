@@ -27,6 +27,8 @@ function Login ({ setLogin }) {
     };
 
     return (
+        <div>
+        <h5>LOGIN</h5>
         <div className="login-SignUp-form-Div">
             <form className="Login-signup-form-container">
                 <input className="login-SignUp-form"
@@ -44,9 +46,10 @@ function Login ({ setLogin }) {
                     onChange={(e) => setPassword(e.target.value)}
                 />
             </form>
-            <button type="submit" onClick={handleSubmit} className="login-Signup-btn">
+            <button type="submit" onClick={handleSubmit} className="customize-playlist-button">
                 <Link to="/goal"> Login </Link>
             </button>
+        </div>
         </div>
     )
 }

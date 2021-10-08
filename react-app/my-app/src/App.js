@@ -56,9 +56,9 @@ function App() {
 
   return (
     <div>
-      <h1>Goals</h1>
-      <h4>Through music</h4>
       <Nav onChangePage={setPage}/>
+      <h1>Goals</h1>
+      <h4>THROUGH MUSIC</h4>
       <Switch>
         <Route path="/sign-up">
           <SignUp setLogin={setLogin} />

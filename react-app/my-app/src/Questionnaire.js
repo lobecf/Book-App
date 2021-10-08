@@ -93,6 +93,7 @@ function Questionnaire ({ userInfo }) {
                 <p>Select each checkbox that you associate with each genre below</p>
             </div>
             <div className="customize-playlist-form">
+            <i class="fas fa-book"></i>
                 {createForm(genres[currentGenre])}
                 <button type="submit" className="customize-playlist-button" onClick={handleSubmit}>Next</button>
             </div>
