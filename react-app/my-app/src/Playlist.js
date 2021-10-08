@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 function Playlist({ userInfo }) {
     const location = useLocation()
     const [goalsList, setGoalsList] = useState()
-    const [list, setList] = useState([])
+    const [list, setList] = useState()
 
     const goal = location.state.genre
     console.log(goal)
@@ -16,7 +16,6 @@ function Playlist({ userInfo }) {
         .then(resp => resp.json())
         .then(data => {
             console.log("Initial data", data)
-            setGoalsList(data)
             // const filteredGenres = data.map(element => {
             //     const arr = element.goals.split(",")
             //     return arr.filter(element => {
@@ -27,18 +26,33 @@ function Playlist({ userInfo }) {
             // const allGenres = data.map(element => element.goals)
             const findGenres = data.filter(element => element.goals.includes(goal))
             const setGenres = findGenres.map(element => element.genres)
+            setList(setGenres)
             // console.log("Genres:", allGenres)
             console.log("Includes Find:", setGenres)
-            console.log(`https://api.discogs.com/database/search?q=${goal}&genre&key=${API_KEY}&secret=${API_SECRET}`)
+
+            const newGenres = setGenres.map(genre => {
+                fetch(`http://localhost:9292/songs/${genre}`)
+                .then(resp => resp.json())
+                .then(data => {
+                    data.map(element => {
+                        console.log(element)
+                        setList(list => "aaaaa")
+                        console.log("each list:", list)
+                    })
+                    console.log("final list:", list)
+                })
+            })
+
+            console.log("newGenres:", list)
             // console.log("Includes Filter:", filteredGenres)
             // console.log(filteredGenres)
             // const findGenres = data.filter(element => element.goals.includes(genre))
             // genres.forEach(fetch using element .genre as interpolated piece)
         })
 
-        fetch(`https://api.discogs.com/database/search?q=${goal}&genre&key=${API_KEY}&secret=${API_SECRET}`)
-        .then(resp => resp.json())
-        .then(data => console.log(data))
+        // fetch(`http://localhost:9292/songs/${list[0]}`)
+        // .then(resp => resp.json())
+        // .then(data => console.log("data:", data))
     }, [])
 
     return (

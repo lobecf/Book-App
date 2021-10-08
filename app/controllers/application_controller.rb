@@ -34,4 +34,14 @@ class ApplicationController < Sinatra::Base
     genres.to_json
   end
 
+  get "/songs" do
+    Song.all.to_json
+  end
+
+  get "/songs/:genre" do
+    genre = params[:genre]
+      songs = Song.all.filter {|song| song.genre === genre}
+      songs.sample(5).to_json
+  end
+
 end

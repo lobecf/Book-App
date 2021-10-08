@@ -45,6 +45,7 @@ end
 
 # RSPOTIFY FOR OUR API
 gem 'rspotify'
+gem 'ffaker'
 
 # These gems will only be used when we are running tests
 group :test do

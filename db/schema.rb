@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_164504) do
+ActiveRecord::Schema.define(version: 2021_10_08_013907) do
 
   create_table "goals", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 2021_10_06_164504) do
     t.integer "goal_id"
     t.index ["goal_id"], name: "index_playlists_on_goal_id"
     t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "genre"
+    t.string "name"
+    t.string "band"
   end
 
   create_table "user_genres", force: :cascade do |t|
