@@ -41,6 +41,11 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
         })
         return <div className="songs-div">
             <h3>Songs for {goal}</h3>
+            <div className="categories">
+                <p className="info-p">Song:</p>
+                <p className="info-p">Artist:</p>
+                <p className="info-p">Genre:</p>
+            </div>
             {map}
         </div>
     }
