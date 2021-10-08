@@ -94,7 +94,6 @@ function Questionnaire ({ userInfo }) {
                 <p>with to retrieve you own customized playlist</p>
             </div>
             <div className="customize-playlist-form">
-            <i class="fas fa-book"></i>
                 {createForm(genres[currentGenre])}
                 <button type="submit" className="customize-playlist-button" onClick={handleSubmit}>Next</button>
             </div>

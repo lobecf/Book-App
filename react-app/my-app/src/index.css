@@ -238,7 +238,7 @@ p {
 .info-p {
   display:inline;
   word-wrap: break-word;
-  width: 250px;
+  width: 300px;
   float: left;
   align-content: center;
   margin-left: 70px;
@@ -247,12 +247,40 @@ p {
 }
 
 .song-info {
-  margin: auto;
+  align-items: baseline;
 }
-
 .song-btn {
   align-content: center;
-  margin-top: 20px;
+  display:inline;
+  margin-left: 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+
+.song-btn:hover {
+  align-content: center;
+  background: #82d973;
+  display:inline;
+  margin-left: 0px;
+  margin-top: 14.9px;
+  margin-bottom: 10px;
+}
+
+.categories {
+  margin-top: 40px;
+}
+
+.song-btn-2 {
+  align-content: center;
+  display:inline;
+  margin-left: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: none !important;
+  color: #262626;
 }
 
 .songs-div {

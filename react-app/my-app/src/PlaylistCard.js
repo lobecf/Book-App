@@ -45,6 +45,7 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
                 <p className="info-p">Song:</p>
                 <p className="info-p">Artist:</p>
                 <p className="info-p">Genre:</p>
+                <button className="song-btn-2">Remove</button>
             </div>
             {map}
         </div>
