@@ -3,8 +3,8 @@ import { useHistory } from "react-router-dom";
 
 function Questionnaire ({ userInfo }) {
     let history = useHistory();
-    const goals = ["Focus", "Party", "Self Discovery", "Exercise", "Improve Memory", "Reduce Stress", "Ease Pain", "Wellness"]
-    const genres = ["Pop", "R&B", "Rap", "Country", "Reggae", "Religious", "Blues", "Electronic", "Folk", "Classical", "Done"]
+    const goals = ["Building Vocabulary", "Inducing Sleep", "Reducing Stress", "Increasing Motivation", "Sparking Creativity", "Increasing Concentration", "Inducing Emphathy", "Stimulating Composition"]
+    const genres = ["Fantasy", "Philosophy", "Poetry", "Horror", "Suspense", "Satire", "Non fiction", "Mystery", "Romance", "Historical", "Done"]
     const [fullResults, setFullResults] = useState({})
     const [currentGenre, setCurrentGenre] = useState(0)
     const [checkedState, setCheckedState] = useState(
@@ -86,12 +86,18 @@ function Questionnaire ({ userInfo }) {
         }
     }
 
+    // history.push(`/stories/${data.id}`)
+    // route path="stories/:id"
+    // let id = useParams 
+    
+console.log(fullResults)
+
     return (
         <div>
             <div className="intro-new-user">
                 <h2>Hello {userInfo.name}</h2>
-                <p>Check each goal that you associate the genre</p>
-                <p>with to retrieve you own customized playlist</p>
+                <p>Check each goal that you associate a book genre</p>
+                <p>with to retrieve your own customized book readlist</p>
             </div>
             <div className="customize-playlist-form">
                 {createForm(genres[currentGenre])}

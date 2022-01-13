@@ -7,8 +7,8 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
         console.log("list:", list)
         setJson(list.map(element => {
             if (element.length !== 0) {
-                const songs = element.map(element => element.name)
-                return songs.join(",")
+                const books = element.map(element => element.name)
+                return books.join(",")
             }
         }).filter(element => element !== undefined).join(","))
 
@@ -28,22 +28,22 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
         //     })
     }, [list])
 
-    const setSongs = () => {
+    const setBooks = () => {
         const map = list.map(arr => {
-            return arr.map((song, index) => {
+            return arr.map((book, index) => {
                 return <div className="song-info" key={index}>
-                    <p className="info-p">{song.name}</p>
-                    <p className="info-p">{song.band}</p>
-                    <p className="info-p">{song.genre}</p>
-                    <button className="song-btn" onClick={() => handleOnChange(song)}>X</button>
+                    <p className="info-p">{book.title}</p>
+                    <p className="info-p">{book.author}</p>
+                    <p className="info-p">{book.genre}</p>
+                    <button className="song-btn" onClick={() => handleOnChange(book)}>X</button>
                 </div>
             })
         })
         return <div className="songs-div">
             <h3>Songs for {goal}</h3>
             <div className="categories">
-                <p className="info-p">Song:</p>
-                <p className="info-p">Artist:</p>
+                <p className="info-p">Title:</p>
+                <p className="info-p">Author:</p>
                 <p className="info-p">Genre:</p>
                 <button className="song-btn-2">Remove</button>
             </div>
@@ -51,17 +51,17 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
         </div>
     }
 
-    const handleOnChange = song => {
-        console.log("index:", song)
-        const songs = list.map(arr => {
-            return arr.filter(element => !(element.name === song.name && element.genre === song.genre))
+    const handleOnChange = book => {
+        console.log("index:", book)
+        const books = list.map(arr => {
+            return arr.filter(element => !(element.title === book.title && element.genre === book.genre))
         })
-        setList(songs)
-        console.log("songs", songs)
-        setJson(songs.map(element => {
+        setList(books)
+        console.log("books", books)
+        setJson(books.map(element => {
             if (element.length !== 0) {
-                const songs = element.map(element => element.name)
-                return songs.join(",")
+                const books = element.map(element => element.title)
+                return books.join(",")
             }
         }).filter(element => element !== undefined).join(","))
     }
@@ -72,7 +72,7 @@ function PlaylistCard({ userInfo, goal, list, setList }) {
 
     return (
         <div className="playlist-div">
-            {setSongs()}
+            {setBooks()}
         </div>
     )
 }

@@ -24,15 +24,60 @@ class ApplicationController < Sinatra::Base
     UserGenre.all.to_json
   end
 
-  get "/user_genres/:id" do
-    user = User.find(params[:id])
-    user.user_genres.to_json
-  end
 
   post "/user_genres" do
     genres = UserGenre.create(params)
     genres.to_json
   end
+
+  get "/user_genres/:id" do
+    user = User.find(params[:id])
+    user.user_genres.to_json
+  end  
+  # patch "/user_genres/:user/update/:id" do
+  #   user = User.find(params[:id])
+  #   user_genre =
+  #   user.user_genres.to_json
+  # end
+
+
+  get "/books" do
+    Book.all.to_json
+  end
+
+  get "/books/:genre" do
+    genre = params[:genre]
+    if genre == "Fantasy" then
+      genre = "Urban Fantasy"
+    end
+    books = Book.all.filter {|book| book.genre === genre}
+    books.sample(5).to_json
+  end
+
+  get "/playlists/:id" do
+    list = User.find(params[:id])
+    list.playlists.to_json
+  end
+
+  # post "/playlists/:id" do
+  #   user = User.find(params[:id])
+  #   list = Playlist.create(user: user, goal: params[goal], songs: params[songs])
+  #   list.playlists.to_json
+  # end
+
+  post "/playlists" do
+    user = User.find(params[:id])
+    playlist = user.playlists.filter {|list| list.goal === params[:goal]}
+    if playlist then
+      list = playlist.update(user: user, goal: params[:goal], books: params[:books])
+      list.playlists.to_json
+    else
+      list = Playlist.create(user: user, goal: params[:goal], books: params[:books])
+      list.playlists.to_json
+    end
+  end
+
+  ###
 
   get "/songs" do
     Song.all.to_json

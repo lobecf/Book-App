@@ -5,46 +5,30 @@ import { generatePath } from "react-router";
 function Goal ({ userInfo }) {
     const [goalsList, setGoalsList] = useState([])
     console.log("User Info:", userInfo)
-    // useEffect(() => {
+
+    // function createCharts () {
     //     fetch(`http://localhost:9292/user_genres/${userInfo.id}`)
     //     .then(resp => resp.json())
     //     .then(data => {
-
-    //         console.log(data)
+    //         console.log("Initial data", data)
     //         setGoalsList(data)
     //     })
-    // }, [])
+    //     console.log("GoalList:", goalsList)
+    //     const charts = goalsList && goalsList.map(genre => {
+    //         console.log("genre:", genre)
+    //         const genres = genre["goals"].split(",").map((goal, index) => {
+    //             return <p key={index} className="goal-item">{goal}</p>
+    //         })
 
-    // useEffect(() => {
-    //     const charts = goalsList.map(genre =>
-    //         <h3>{genre}</h3>
-    //     )
-    // }, [goalsList])
-
-
-    function createCharts () {
-        fetch(`http://localhost:9292/user_genres/${userInfo.id}`)
-        .then(resp => resp.json())
-        .then(data => {
-            console.log("Initial data", data)
-            setGoalsList(data)
-        })
-        console.log("GoalList:", goalsList)
-        const charts = goalsList && goalsList.map(genre => {
-            console.log("genre:", genre)
-            const genres = genre["goals"].split(",").map((goal, index) => {
-                return <p key={index} className="goal-item">{goal}</p>
-            })
-
-            return  <div>
-                        <h3>{genre.genres}</h3>
-                        <ul>
-                            {genres}
-                        </ul>
-                    </div>
-        })
-        return charts
-    }
+    //         return  <div>
+    //                     <h3>{genre.genres}</h3>
+    //                     <ul>
+    //                         {genres}
+    //                     </ul>
+    //                 </div>
+    //     })
+    //     return charts
+    // }
 
     return (
         <div>

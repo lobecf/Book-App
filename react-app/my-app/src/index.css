@@ -21,7 +21,16 @@ h2 {
 h3 {
   font-family: "Permanent Marker";
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+h4 {
+  font-family: "Permanent Marker";
+  color: white;
+  font-size: 30px;
   margin-top: 1px;
   margin-bottom: 5px;
   text-align: center;

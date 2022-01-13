@@ -5,8 +5,8 @@ import Welcome from "./Welcome";
 import Login from "./Login";
 import Playlist from "./Playlist";
 import { Switch, Route } from "react-router-dom";
-import Profile from "./Profile";
 import Goal from "./Goal";
+import UpdateGoal from "./UpdateGoal";
 import Questionnaire from "./Questionnaire";
 import axios from "axios";
 
@@ -58,7 +58,7 @@ function App() {
     <div>
       <Nav onChangePage={setPage}/>
       <h1>Goals</h1>
-      <h4>THROUGH MUSIC</h4>
+      <h4>THROUGH BOOKS</h4>
       <Switch>
         <Route path="/sign-up">
           <SignUp setLogin={setLogin} />
@@ -71,6 +71,9 @@ function App() {
         </Route>
         <Route path="/questionnaire">
           <Questionnaire userInfo={userInfo} />
+        </Route>
+        <Route path="/update">
+          <UpdateGoal userInfo={userInfo} />
         </Route>
         <Route path="/playlist">
           <Playlist userInfo={userInfo} />

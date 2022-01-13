@@ -19,7 +19,7 @@ function Playlist({ userInfo }) {
             const setGenres = findGenres.map(element => element.genres)
 
             for (const genre of setGenres) {
-                fetch(`http://localhost:9292/songs/${genre}`)
+                fetch(`http://localhost:9292/books/${genre}`)
                 .then(resp => resp.json())
                 .then(data => {
                     setList(list => [...list, data])

@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_10_08_142023) do
 
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "genre"
+    t.string "author"
+  end
+
   create_table "goals", force: :cascade do |t|
     t.string "name"
     t.string "desc"
